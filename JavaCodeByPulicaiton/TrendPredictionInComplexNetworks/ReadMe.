@@ -1,1 +1,12 @@
-This directory is for code .
+This is executable java jar file which includes source java files also. To execute this jar file use java higher than 1.7 version. This jar file includes code for paper identifying emerging influential nodes in evovling networks: Exploiting strenght of hte weak nodes. This file includes the source .java files only for develeped code. It can be found in com package.
+
+This is script for running the executable jar. Command line arguments are as follows-
+-fname : fileFullPath 
+-mi : model Index (1 for TBP,  6 for in degree,7 :NonParam (proposed model).
+-st : Start time value.
+-et : end time value.
+-out : out put directory name. 
+-itp: when Tp is varying it should be 1 other wise 0.
+-itf: when Tf is varying  it should be 1 other wise 0. at a time only one from -itp or -itf should be one.
+-mp0: is for TBP model parameter.  
+file should be in the format of : fromNode toNode time : all values in integer should be preferred.
