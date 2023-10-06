@@ -1,5 +1,5 @@
 
-source('C:/Users/thinkpad/OneDrive/Documents/R/Utilities/Utilities.R')
+source('Utilities.R')
 library(rjson)
 library(hashmap)
 
