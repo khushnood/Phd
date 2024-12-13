@@ -233,3 +233,35 @@ getLifeSpanOfEachNode<-function(nodeIds,time){
   return(lifeSpanVector)
 }
 
+getDateFromJsonInAPSCitationData <- function(doi){
+  tmp= unlist(strsplit(doi, "/"))
+  splittedPath= unlist(strsplit(tmp[2], "\\."))
+  
+  
+  # jsonmetafilePath=list.files(path=metaFilesPath,pattern = paste0(tmp[2],".json$"), recursive = TRUE)
+  filePath=paste(metaFilesPath,splittedPath[1],splittedPath[2],paste0(tmp[2],".json"),sep = "\\")
+  if(file.exists(filePath)){
+    result <- fromJSON(file =filePath )
+    completeDate=result$date
+    completeDate=result$date
+    splittedDate= unlist(strsplit(completeDate, "\\-"))
+    return(splittedDate[1])
+  }
+  else{
+    return("-1")
+  }
+  
+  convertToAdjacencyMatrix<-function(edgeList){
+    size=max(edgeList)
+    mat = matrix(0L,nrow=size, ncol=size)
+    for(item in seq(1,length(size))){
+      i=edgeList[item,1]
+      j=edgeList[item,2]
+      mat[i][j]=1;
+      
+      
+    }
+    return(mat)
+  }
+  
+}
